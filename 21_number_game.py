@@ -32,9 +32,10 @@ def main():
                     c = random.randint(1, 3)
                     for i in range(c):
                         #Check if the computer lost
-                        if current_set[-1] == 20:
+                        if len(current_set) > 0 and current_set[-1] == 20:
                             winner = "player"
-                        current_set.append(current_set[-1]+1)
+                        maximum = current_set[-1] if len(current_set) > 0 else 0
+                        current_set.append(maximum+1)
                     print(f"\nThe computer added {c} numbers to the list.\nFinal state:")
                     print(current_set)
                     #Check if the player lost
